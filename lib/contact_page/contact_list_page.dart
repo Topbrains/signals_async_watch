@@ -62,6 +62,7 @@ class ContactListPageState extends State<ContactListPage> {
       ),
       body: Column(
         children: [
+          /// Form to add and update contacts
           Form(
             key: _formKey,
             child: Padding(
@@ -80,6 +81,8 @@ class ContactListPageState extends State<ContactListPage> {
               ),
             ),
           ),
+
+          /// List of contacts
           Expanded(
             child: Watch(
               (context) {
@@ -117,6 +120,9 @@ class ContactListPageState extends State<ContactListPage> {
     );
   }
 
+
+
+  /// This function returns a list of widgets that are icons (delete and edit)
   List<Widget> contactIcons(int index) {
     return [
       /// Delete contact on tap
@@ -146,6 +152,8 @@ class ContactListPageState extends State<ContactListPage> {
     ];
   }
 
+
+  /// This function returns a list of widgets that are buttons (add, update, and download)
   List<Widget> get contactButtons {
     return [
       /// Add contact on tap
