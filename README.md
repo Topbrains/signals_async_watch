@@ -6,7 +6,7 @@ We are going to use the signals library to make simple demonstration of how to u
 
 In this example we will be dealing with **futures**. In another article we will be dealing with streams.
 
-We will work with a list of contacts. We will use the typicode API to get the list of contacts. [Typicode](https://jsonplaceholder.typicode.com/users)
+We will work with a list of contacts. We will use the Typicode API to get the list of contacts. [Typicode](https://jsonplaceholder.typicode.com/users)
 
 For the contact we will use id, name and email so that it matches the Typicode API.
 
@@ -17,7 +17,7 @@ For each contact we will have two buttons: edit and delete.
 It will look like this:
 ![ScreenShot](assets/images/screenshot.png)
 
-Of course the asynchronous part will be downloading the list of contacts from the typicode API.
+Of course the asynchronous part will be downloading the list of contacts from the Typicode API.
 
 ## Naming conventions
 
@@ -26,9 +26,9 @@ myVariable$ - A variable that is a Signal. This is shorter than myVariableSignal
 
 ## How does the futureSignal work?
 
-You can use the futureSignal function from the signals package to create an async signal. This signal will return an AsyncState<T> object.
+You can use the `futureSignal` function from the signals package to create an async signal that returns an `AsyncState<T>` object.
 
-The AsyncState<T> object has three states: loading, data and error. And yes, when processing AsyncValue inside a widget, it’s paramount to think of all cases (data, loading, error). If you don’t, you will get an error and bad user experience.
+The `AsyncState<T>` object has three states: loading, data and error. And yes, when processing AsyncValue inside a widget, it’s paramount to think of all cases (data, loading, error). If you don’t, you will get an error and bad user experience.
 
 Lets create a signal that will return 1:
 
@@ -58,9 +58,7 @@ A function can't do that.
 
 ## How do we display the value of the futureSignal in a widget?
 
-There are many ways to display the value of the futureSignal. We will use the signals Watch() widget.
-
-As an alternative a FutureBuilder is a widget that takes a future and a builder function. It can wait for the Future. The builder function takes a context and an AsyncSnapshot object which corresponds directly to the AsyncState in our futureSignal. The AsyncSnapshot object has three states: waiting, data and error.
+There are many ways to display the value of the futureSignal. We will use the signals Watch() widget:
 
 ```dart
 Watch(() {
@@ -77,7 +75,7 @@ Watch(() {
 });
 ```
 
-
+As an alternative a FutureBuilder is a widget that takes a future and a builder function. It can wait for the Future. The builder function takes a context and an AsyncSnapshot object which corresponds directly to the AsyncState in our futureSignal. The AsyncSnapshot object has three states: waiting, data and error.
 
 ## MacOS and iOS setup
 
@@ -91,7 +89,7 @@ Watch(() {
     }
     ```
 
-- When trying to download from typicode by pressing the Donload button you could get:
+- When trying to download from Typicode by pressing the Download button you could get:
 
     ```dart
     Error: Instance of  AsyncError<List<Contact>>```
